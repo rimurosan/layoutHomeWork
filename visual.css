@@ -1,0 +1,321 @@
+/* clear redundnt styles */
+/* get rid of media queries, use display flex: instead */
+/* global padding and gap instead of local margings */
+/* redo img girl using flex grow */
+/* replace balaNces_p1 to :last-child */
+/* history: make history element (image + circle + label), and reuse it */
+/* place icons as images, not using ::before */
+
+* {
+  font-family: "Source Sans Pro", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  padding: 45px 31px 0 33px;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  background: #e9ebec;
+  padding: 46px 30px 0 42px;
+}
+
+.side {
+  padding: 46px 186px 0 28px;
+}
+
+/* ////////////////  Лого Навигация баннер  ////////////*/
+
+.logo {
+  display: flex;
+  padding-left: 48px;
+}
+
+.logo1 {
+  font-size: 21px;
+  font-weight: 600;
+  line-height: 26px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3579dc;
+}
+
+.nav_bar {
+  display: flex;
+  flex-direction: column;
+  padding: 70px 55px 64px 24px;
+  gap: 43px;
+}
+.menu__bar {
+  display: flex;
+  gap: 13px;
+}
+
+a {
+  font-size: 17px;
+  font-weight: 600;
+  line-height: 21px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-decoration: none;
+  color: #8e97a4;
+}
+.subscr {
+  border-radius: 10px;
+  background: linear-gradient(162.79deg, #3579dc 23.51%, #95d9ff 93.9%);
+  color: #ffffff;
+  padding: 51px 18px 21px 17px;
+  text-align: left;
+}
+
+.sub1 {
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 20.11px;
+  text-align: left;
+  padding-bottom: 5px;
+}
+.sub2 {
+  font-size: 17px;
+  font-weight: 400;
+}
+.sub1 {
+  width: max-content;
+}
+
+/*//////////////// Основной контент ////////////// */
+
+.trendH3__main {
+  font-size: 20px;
+  font-weight: 600;
+  color: #404650;
+}
+
+.blocks__group {
+  display: flex;
+  padding-top: 31px;
+  padding-bottom: 47px;
+  gap: 14px;
+}
+.blocks {
+  display: flex;
+  border-radius: 11px;
+  background: #ffff;
+  box-shadow: 0px 22px 40px 0px #8e97a430;
+  padding: 22px 76px 29px 16px;
+  gap: 24px;
+}
+
+.p1__blocks {
+  font-size: 18px;
+  font-weight: 600;
+  color: #404650;
+}
+.p2__blocks {
+  font-size: 16px;
+  font-weight: 600;
+  color: #404650;
+}
+
+.imgHome {
+  align-self: center;
+}
+
+@media screen and (max-width: 1439px) {
+  .imgGirl {
+    visibility: hidden;
+  }
+  .layer {
+    padding: 0 !important;
+  }
+}
+.layer {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  padding-left: 169px;
+}
+@media screen and (min-width: 1440px) {
+  .imgGirl {
+    position: absolute;
+    top: 120px;
+    left: 200px;
+  }
+}
+.block__balances {
+  padding: 20px 16px 79px 43px;
+  border-radius: 11px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 22px 40px 0px #8e97a430;
+}
+
+.balances__p1,
+.balances__p2 {
+  color: rgba(64, 70, 80, 1);
+
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22.63px;
+  text-align: left;
+}
+.balances__p2 {
+  font-size: 33px;
+}
+
+.mainAcc__group {
+  padding-top: 12px;
+}
+.balaces_p {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 16px;
+  font-weight: 400;
+  color: #404650;
+  border-bottom: 1px solid #f1f4f5;
+  line-height: 20.11px;
+  text-align: left;
+  padding-top: 18px;
+  padding-bottom: 21px;
+}
+.balaces_p:last-child {
+  font-size: 16px;
+  font-weight: 400;
+  color: #404650;
+  border: none;
+  padding-bottom: 0;
+}
+
+.cost {
+  display: flex;
+  padding-left: 313px;
+  gap: 15px;
+  align-items: center;
+}
+
+.new5blocks {
+  background: transparent;
+  display: flex;
+  gap: 44px;
+  flex-wrap: wrap;
+  padding-top: 39px;
+}
+.new__block {
+  width: 226px;
+  height: 120px;
+  border-radius: 11px;
+  background: #ffffff;
+  box-shadow: 0px 22px 40px 0px #8e97a430;
+}
+
+/*///////////////// Сайд бар с историей //////////////////////////*/
+
+.head2History {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #404650;
+}
+
+.side_email {
+  display: flex;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+  padding-bottom: 58px;
+}
+
+.side_email p {
+  width: max-content;
+  padding-top: 3px;
+}
+.date {
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 15px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #88909c;
+}
+
+.history_email {
+  padding: 34px 0 0 0;
+}
+
+.circle__color {
+  background: #3579dc !important;
+}
+
+.circle {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  border: 1px solid #cdd2d4;
+  background-color: #fdfeff;
+  z-index: 2;
+  position: relative;
+  display: inline-block;
+}
+
+.imgBlock {
+  position: relative;
+}
+.imgBlock .tooltip {
+  visibility: hidden;
+  position: absolute;
+  top: 36px;
+  left: -93px;
+}
+.imgBlock:hover .tooltip {
+  visibility: visible;
+}
+.emailOpen {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #3579dc;
+}
+
+.email2,
+.email3,
+.email4,
+.email5 {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+
+.line {
+  width: 1px;
+  height: 400px;
+  margin-left: 13px;
+  position: absolute;
+  border-left: 1px dashed #cdd2d4;
+  top: 120px;
+}
+.side_email img {
+  position: relative;
+  top: 3px;
+  left: -19px;
+  z-index: 3;
+}
