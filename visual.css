@@ -209,7 +209,7 @@ a {
 .new5blocks {
   background: transparent;
   display: flex;
-  gap: 44px;
+  gap: 36px;
   flex-wrap: wrap;
   padding-top: 39px;
 }
