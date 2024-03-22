@@ -13,6 +13,13 @@
   box-sizing: border-box;
 }
 
+/* set up the default font styling  */
+.body {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+}
+
 .container {
   width: 100%;
   display: flex;
@@ -32,22 +39,19 @@
 }
 
 .side {
-  padding: 46px 186px 0 28px;
+  min-width: 357px;
+  padding: 46px 28px 0 28px;
 }
 
 /* ////////////////  Лого Навигация баннер  ////////////*/
 
 .logo {
   display: flex;
-  padding-left: 48px;
-}
-
-.logo1 {
+  /* saves the day on a smaller screens */
+  align-self: center;
+  /* child text elements inherit styles so you can apply all the styling to the parent element */
   font-size: 21px;
   font-weight: 600;
-  line-height: 26px;
-  letter-spacing: 0em;
-  text-align: left;
   color: #3579dc;
 }
 
@@ -66,8 +70,6 @@ a {
   font-size: 17px;
   font-weight: 600;
   line-height: 21px;
-  letter-spacing: 0em;
-  text-align: left;
   text-decoration: none;
   color: #8e97a4;
 }
@@ -76,14 +78,12 @@ a {
   background: linear-gradient(162.79deg, #3579dc 23.51%, #95d9ff 93.9%);
   color: #ffffff;
   padding: 51px 18px 21px 17px;
-  text-align: left;
 }
 
 .sub1 {
   font-size: 16px;
   font-weight: 700;
   line-height: 20.11px;
-  text-align: left;
   padding-bottom: 5px;
 }
 .sub2 {
@@ -96,10 +96,9 @@ a {
 
 /*//////////////// Основной контент ////////////// */
 
-.trendH3__main {
+.trendH3__main,
+.head2History {
   font-size: 20px;
-  font-weight: 600;
-  color: #404650;
 }
 
 .blocks__group {
@@ -117,15 +116,22 @@ a {
   gap: 24px;
 }
 
-.p1__blocks {
-  font-size: 18px;
+/* You can prevent a lot of duplication with this technique */
+.p1__blocks,
+.p2__blocks,
+.head2History,
+.trendH3__main {
   font-weight: 600;
   color: #404650;
 }
+
+.p1__blocks {
+  font-size: 18px;
+}
+
 .p2__blocks {
   font-size: 16px;
-  font-weight: 600;
-  color: #404650;
+  font-weight: 400;
 }
 
 .imgHome {
@@ -134,26 +140,19 @@ a {
 
 @media screen and (max-width: 1439px) {
   .imgGirl {
-    visibility: hidden;
-  }
-  .layer {
-    padding: 0 !important;
+    display: none;
   }
 }
+
 .layer {
   display: flex;
-  flex-direction: row-reverse;
-  justify-content: flex-end;
-  padding-left: 169px;
+  gap: 32px;
 }
-@media screen and (min-width: 1440px) {
-  .imgGirl {
-    position: absolute;
-    top: 120px;
-    left: 200px;
-  }
-}
+
 .block__balances {
+  /* That's the approach with flex-grow */
+  flex: 1;
+  max-width: 580px;
   padding: 20px 16px 79px 43px;
   border-radius: 11px;
   background: #ffffff;
@@ -165,49 +164,37 @@ a {
 .balances__p1,
 .balances__p2 {
   color: rgba(64, 70, 80, 1);
-
+  margin-bottom: 12px;
   font-size: 18px;
   font-weight: 600;
   line-height: 22.63px;
-  text-align: left;
 }
 .balances__p2 {
   font-size: 33px;
 }
 
-.mainAcc__group {
-  padding-top: 12px;
-}
 .balaces_p {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 16px;
-  font-weight: 400;
   color: #404650;
   border-bottom: 1px solid #f1f4f5;
   line-height: 20.11px;
-  text-align: left;
   padding-top: 18px;
   padding-bottom: 21px;
 }
 .balaces_p:last-child {
-  font-size: 16px;
-  font-weight: 400;
-  color: #404650;
   border: none;
   padding-bottom: 0;
 }
 
 .cost {
   display: flex;
-  padding-left: 313px;
   gap: 15px;
   align-items: center;
 }
 
 .new5blocks {
-  background: transparent;
   display: flex;
   gap: 36px;
   flex-wrap: wrap;
@@ -222,23 +209,11 @@ a {
 }
 
 /*///////////////// Сайд бар с историей //////////////////////////*/
-
-.head2History {
-  font-size: 20px;
-  font-weight: 600;
-  letter-spacing: 0em;
-  text-align: left;
-  color: #404650;
-}
-
 .side_email {
   display: flex;
   font-size: 16px;
   font-weight: 400;
   line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
-  padding-bottom: 58px;
 }
 
 .side_email p {
@@ -249,13 +224,14 @@ a {
   font-size: 12px;
   font-weight: 400;
   line-height: 15px;
-  letter-spacing: 0em;
-  text-align: left;
   color: #88909c;
 }
 
 .history_email {
-  padding: 34px 0 0 0;
+  padding-top: 34px;
+  display: flex;
+  flex-direction: column;
+  gap: 58px;
 }
 
 .circle__color {
@@ -269,8 +245,6 @@ a {
   border: 1px solid #cdd2d4;
   background-color: #fdfeff;
   z-index: 2;
-  position: relative;
-  display: inline-block;
 }
 
 .imgBlock {
@@ -289,20 +263,7 @@ a {
   font-size: 16px;
   font-weight: 600;
   line-height: 18px;
-  letter-spacing: 0em;
-  text-align: left;
   color: #3579dc;
-}
-
-.email2,
-.email3,
-.email4,
-.email5 {
-  font-size: 16px;
-  font-weight: 400;
-  line-height: 20px;
-  letter-spacing: 0em;
-  text-align: left;
 }
 
 .line {
