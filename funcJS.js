@@ -302,11 +302,14 @@
 // }
 
 // function mergesObj(obj1,obj2){
-//   return Object.assign({}, obj1, obj2);
+//   return {
+//     ...obj1,
+//     ...obj2,
+//   }
 // }
 // console.log(mergesObj(user,user2));
 
-// console.log(mergesObj(user,user2))
+
 ///////////////////////////////////////////////////////////////////////////////////
 
 
@@ -344,6 +347,7 @@
 
 
 // 10. Create a function that adds a given property to an object.
+//я прям чето запотел на этом вопросе , короче как создать новый обьект со свойствами и значениями исхожного + то что мы передадим я понял , тоесть через оператор расширения ,  но вот как с помощью него напихать в существующий обьект я пока что то не понимаю я пока что понимаю только форму obj[key]= value, вид хоть приблизительно такой ? или вообще иначе ?
 
 // const user= {
 //   name: 'victor',
@@ -352,12 +356,16 @@
   
 // }
 
-// function pushPropObj(obj ,prop,value){
-    
-  
-
-
+// function pushPropObj(obj , prop, value){
+//     obj = {
+//         ...obj,
+//         [prop]: value,
+//     }
+//     return obj
+ 
 // }
-// pushPropObj(user, 'status', 'isAdmin')
+
+
+// console.log(pushPropObj(user,{'Status':'isAdmin'} ))
 // console.log(user)
 ///////////////////////////////////////////////////////////////////////////////////
