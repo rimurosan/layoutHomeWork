@@ -1,13 +1,11 @@
 //  1. Create a function that iterates through an array and return the sum of all elements.
-// let arr = [ 1,2,3,4,5];
-// function sumElements(arr){
-//   let count= 0; 
-//   for(let i = 0 ; i<arr.length; i++){
-//     count += arr[i];
-//   }
-// return count;
+// const digitArray = [1,2,3,4,5];
+// function sumElements(anyArr){
+//   let count = 0 ;
+//   anyArr.forEach((item)=>count +=item)
+//   return count;
 // }
-// console.log(sumElements(arr));
+// console.log(sumElements(digitArray));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -25,13 +23,9 @@
 
 // let arr = [1,2,3,4,5];
 
-// function maxValue(arr){
-//   let max= arr[0];
-//   for (i = 1; i < arr.length; ++i) {
-//       if (arr[i] > max) max = arr[i];
-      
-//   }
-//   return max;
+// function maxValue(anyArray){
+
+//   return Math.max(eval(anyArray.join(',')));
 // }
 // console.log(maxValue(arr));
 
@@ -40,8 +34,8 @@
 // 4. Create a function returns the number of elements in the array.
 
 // let arr= [0,1,2,3,4,5,6,7,8,9,10,11];
-// function amountElements(arr){
-//   return arr.length;
+// function amountElements(anyArray){
+//   return anyArray.length;
 // }
 // console.log(amountElements(arr));
 
@@ -49,30 +43,26 @@
 
 // 5. Create a function returns the index of a value in the array.
 // let arr = [1,2,3,4,5];
-// function valIndex(arr,value){
-// return arr.indexOf(value);
+// function valIndex(anyArray,value){
+// return anyArray.indexOf(value);
 // }
 // console.log(valIndex(arr, 5));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 6. Create a function that returns a new array with every element in the array multiplied by two.
-// let arr = [1,2,3,4,5];
-// function multiplyArray(arr){
-//   let newArr = arr.map(item=>item*2);
-//   return newArr;
+// const arr = [1,2,3,4,5];
+// function multiplyArray(anyArray){
+//   return anyArray.map(item=>item*2);
+ 
 // }
 // console.log(multiplyArray(arr));
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 7. Create a function returns a new array with only the even elements from the original array.
 // let arr= [0,1,2,3,4,5,6,7,8,9,10,11];
-// function evenELments(arr){
-//   let newArray =[];
-//   for(let i = 1 ; i<arr.length; i++){
-//     if (arr[i]%2==0) newArray.push(arr[i]);
-//   }
-//   return newArray;
+// function evenELments(anyArray){
+//  return anyArray.filter(item=> item%2===0 ? item:null)
 // }
 // console.log(evenELments(arr));
 
@@ -82,14 +72,10 @@
 // 8. Create a function that returns a new array with only the elements from the original array that have a length greater than a specified value.
 
 // let arr= [1,2,3,4,5,6,7,8,9,10];
-// function greaterLengthElemArray(arr, value){
-//    let newArr = [] 
-//    for( let item of arr){
-//     if(item>value) newArr.push(item);
-//    }
-//   return newArr;
+// function greaterLengthElemArray(anyArray, value){
+//   return anyArray.filter(item => item>value? item: null)
 // }
-// console.log(greaterLengthElemArray(arr, 5));
+// console.log(greaterLengthElemArray(arr, 1));
 
 
 
@@ -126,24 +112,31 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 3. Create a program to sort an array in ascending or descending order.
-// let arr= [ 1,2,3,6,9,90,2,1,34,5,89,]
-// function acendingArr(arr){
 
-//   // ascending
-//   return arr.sort((a,b) => a-b);  
-//   //descending 
-//   return arr.sort((a,b) => b-a);   
+// не уверен что понял чего хотят 
+// тоесть вид - кладем в функцию параметр desc - получаем по возрастанию , если кладем acs получаем функцию по убыванию
+// я подумал что требуется в параметры  массив , desc , acs для большей вариативности 
+
+// let arr= [ 1,2,3,6,9,90,2,1,34,5,89,]
+// function acendingArr(anyArray,desc,acs){
+  
+//   if(desc)return anyArray.sort((a,b) => a-b); 
+//   if(acs) return anyArray.sort((a,b) => b-a);   
 // }
-// console.log(acendingArr(arr));
+// console.log(acendingArr(arr,0,1));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 4. Create a program to reverse an array.
-
+// первое что пришло в голову , знаю что он медленный изза переназначения индексов
+// вроде можно было unshift использовать но он насколько помню долгий(всмысле переназначение индексов занимает время)
 // let arr= [1,2,3,4,5,6,7,8,9,10];
-// function greaterLengthElemArray(arr){
-   
-//   return arr.reverse();
+// function greaterLengthElemArray(anyArray){
+//     const newArr= [];
+//    for(let i=anyArray.length-1; i>=0; i--){
+//      newArr.push(anyArray[i]);
+//    }
+//   return newArr;
 // }
 // console.log(greaterLengthElemArray(arr));
 
@@ -151,16 +144,18 @@
 
 // 5. Create a program to perform a linear search on an array.
 
+// я пытался понять о чем ты говоришь , и вот как я это понял , мол если ты в return  говоришь про -1 ,
+// то ты показываешь то что ты ищешь индекс элемента а не сам элемент , а вот так как я сейчас сделал , то тут
+//я как бы говорю что мы хотим получить либо --- элемент  ,  либо ответ ---- элемента нет   
+// по методу filter я все понял, не подходящий вариант 
+// надеюсь я все правильно понял
 // let arr= [1,2,3,4,5,6,7,8,9,10,5];
-// function greaterLengthElemArray(arr ,value){
-//   for (let i = 0 ; i < arr.length; i++){
-//     if(value === arr[i]) return arr[i]
+// function greaterLengthElemArray(anyArray ,value){
+//   for (let i = 0 ; i < anyArray.length; i++){
+//     if(value === anyArray[i]) return anyArray[i]
     
 //   }
-//   return -1;
-
-//   // return arr.filter(item => item == value);  ----> первый вариант был таким , так как тоже вроде проходит по всем элементам от начала до конца
-  
+//   return 'Not exist';
 // }
 // console.log(greaterLengthElemArray(arr, 100));
 
@@ -250,26 +245,9 @@
 // 4. Create a function that converts an array to an object.
 
 // const names = [ 'petya', 'vasya', 'kolya', 'uri']
-// function convert(arr){
-//   result= {};
-//   for(let i= 0 ; i< arr.length; i++){
-//     const item = arr[i];
-//     result[i]= item
-//   }
-//  return result;
-// }
-// console.log(convert(names));
+// function convert(anyArray){
+//      return {...names}
 
-// вариант через reduce:
-
-// const names = [ 'petya', 'vasya', 'kolya', 'uri']
-// function convert(arr){
-  
-//  return arr.reduce((initValue, item , i)=>{
-//   initValue[`${i+1}`]=item;
-//   return initValue;
-//  },{})
- 
 // }
 // console.log(convert(names));
 
@@ -278,6 +256,8 @@
 
 // 5. Write a function that checks if a value is a valid key for an object.
 
+
+// const name ={}
 // const user= {
 //   name: 'victor',
 //   age:30,
@@ -285,9 +265,9 @@
 // }
 
 // function checkKey(obj,key){
-//   return Object.keys(obj).includes(key)
+// return key in obj;
 // }
-// console.log(checkKey(user, 'age'))
+// console.log(checkKey(user, 'name'))
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -309,32 +289,7 @@
 
 // 7. Create a function that merges two objects and returns a new object.
 
-// тут сам себе усложнил задачу , не подумал про простой вариант с разными именами свойств и подумал что подвох в этом но пусть будет как пример
 
-// const user= {
-//   name: 'victor',
-//   age:30,
-//   car: false,
-// }
-// const user2= {
-//   name: 'maksim',
-//   age:30,
-//   car: true,
-// }
-
-// function mergesObj(obj1, obj2){
-  
-//   const sumArrayEntries= [];
-//   const sumEntriesObjects = sumArrayEntries.concat(Object.entries(obj1),Object.entries(obj2));
-//   const result = sumEntriesObjects.reduce((res, item, i)=> {
-//     res[`${i+1}`] = item;
-//     return res;
-//   },{})
-//   return result;
-  
-// }
-
-// тут вариант с более простыми условиями где свойства с разными именами
 // const user= {
 //   name2: 'victor',
 //   age2:30,
@@ -397,17 +352,12 @@
   
 // }
 
-// function pushPropObj(obj ,nameProp, prop){
+// function pushPropObj(obj ,prop,value){
+    
+  
 
-//   obj[nameProp] = prop;
 
 // }
 // pushPropObj(user, 'status', 'isAdmin')
 // console.log(user)
 ///////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-
-
