@@ -366,6 +366,6 @@
 // }
 
 
-// console.log(pushPropObj(user,{'Status':'isAdmin'} ))
+// console.log(pushPropObj(user,Status','isAdmin'))
 // console.log(user)
 ///////////////////////////////////////////////////////////////////////////////////
