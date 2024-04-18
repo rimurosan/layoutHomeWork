@@ -1,19 +1,20 @@
 //  1. Create a function that iterates through an array and return the sum of all elements.
 // const digitArray = [1,2,3,4,5];
 // function sumElements(anyArr){
-//   let count = 0 ;
-//   anyArr.forEach((item)=>count +=item)
-//   return count;
+  
+//   anyArr.forEach((item,i)=> console.log(item[i+1]!==null?item+item[i+1]:0)) 
 // }
-// console.log(sumElements(digitArray));
+// sumElements(digitArray);
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 2. Do the same using .reduce()
 
-// let arr = [ 1,2,3,4,5];
-// function sumElements(arr){
-//   return arr.reduce((acum , item)=> acum+=item)
+// const arr = [ 1,2,3,4,5];
+// function sumElements(anyArray){
+//   return anyArray.reduce((acum , item)=> acum+=item)
 // }
 // console.log(sumElements(arr));
 
@@ -21,7 +22,7 @@
 
 // 3. Create a function that returns the maximum value in the array.
 
-// let arr = [1,2,3,4,5];
+// const arr = [1,2,3,4,5];
 
 // function maxValue(anyArray){
 
@@ -33,7 +34,7 @@
 
 // 4. Create a function returns the number of elements in the array.
 
-// let arr= [0,1,2,3,4,5,6,7,8,9,10,11];
+// const arr= [0,1,2,3,4,5,6,7,8,9,10,11];
 // function amountElements(anyArray){
 //   return anyArray.length;
 // }
@@ -42,7 +43,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 5. Create a function returns the index of a value in the array.
-// let arr = [1,2,3,4,5];
+// const arr = [1,2,3,4,5];
 // function valIndex(anyArray,value){
 // return anyArray.indexOf(value);
 // }
@@ -60,7 +61,7 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 7. Create a function returns a new array with only the even elements from the original array.
-// let arr= [0,1,2,3,4,5,6,7,8,9,10,11];
+// const arr= [0,1,2,3,4,5,6,7,8,9,10,11];
 // function evenELments(anyArray){
 //  return anyArray.filter(item=> item%2===0 ? item:null)
 // }
@@ -71,7 +72,7 @@
 
 // 8. Create a function that returns a new array with only the elements from the original array that have a length greater than a specified value.
 
-// let arr= [1,2,3,4,5,6,7,8,9,10];
+// const arr= [1,2,3,4,5,6,7,8,9,10];
 // function greaterLengthElemArray(anyArray, value){
 //   return anyArray.filter(item => item>value? item: null)
 // }
@@ -88,10 +89,10 @@
 
 
 // 1. Create a program that takes an array as an argument and returns a new array with all duplicate elements removed.
-// let arr = [1,2,4,4,5,2,1,5,67,7];
-// function uniqArrayElements(arr){
+// const arr = [1,2,4,4,5,2,1,5,67,7];
+// function uniqArrayElements(anyArray){
 //   let newArr=[];
-//   for(let element of arr){
+//   for(let element of anyArray){
 //     if(!newArr.includes(element)) newArr.push(element);
 //   }
 
@@ -103,9 +104,9 @@
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 2. Create a program to determine if an array contains a given value.
-// let arr = [9,6,43,'petya', 'egor',1,2,3,4,5,6,7]
-// function detectOfElements(arr, value){
-//   return arr.includes(value);
+// const arr = [9,6,43,'petya', 'egor',1,2,3,4,5,6,7]
+// function detectOfElements(anyArray, value){
+//   return anyArray.includes(value);
 
 // }
 // console.log(detectOfElements(arr, 6));
@@ -113,24 +114,21 @@
 
 // 3. Create a program to sort an array in ascending or descending order.
 
-// не уверен что понял чего хотят 
-// тоесть вид - кладем в функцию параметр desc - получаем по возрастанию , если кладем acs получаем функцию по убыванию
-// я подумал что требуется в параметры  массив , desc , acs для большей вариативности 
-
 // let arr= [ 1,2,3,6,9,90,2,1,34,5,89,]
-// function acendingArr(anyArray,desc,acs){
+// function acendingArr(anyArray,a){
   
-//   if(desc)return anyArray.sort((a,b) => a-b); 
-//   if(acs) return anyArray.sort((a,b) => b-a);   
+//   if(a==='ascending')return anyArray.sort((a,b) => a-b); 
+//   if(a==='descending') return anyArray.sort((a,b) => b-a); 
+//   else return 'Enter array and sort type(ascending or descending)'
 // }
-// console.log(acendingArr(arr,0,1));
+// console.log(acendingArr(arr,ascending));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 // 4. Create a program to reverse an array.
 // первое что пришло в голову , знаю что он медленный изза переназначения индексов
 // вроде можно было unshift использовать но он насколько помню долгий(всмысле переназначение индексов занимает время)
-// let arr= [1,2,3,4,5,6,7,8,9,10];
+// const arr= [1,2,3,4,5,6,7,8,9,10];
 // function greaterLengthElemArray(anyArray){
 //     const newArr= [];
 //    for(let i=anyArray.length-1; i>=0; i--){
@@ -144,20 +142,18 @@
 
 // 5. Create a program to perform a linear search on an array.
 
-// я пытался понять о чем ты говоришь , и вот как я это понял , мол если ты в return  говоришь про -1 ,
-// то ты показываешь то что ты ищешь индекс элемента а не сам элемент , а вот так как я сейчас сделал , то тут
-//я как бы говорю что мы хотим получить либо --- элемент  ,  либо ответ ---- элемента нет   
-// по методу filter я все понял, не подходящий вариант 
-// надеюсь я все правильно понял
-// let arr= [1,2,3,4,5,6,7,8,9,10,5];
+
+// const arr= [1,2,3,4,5,6,7,8,9,10,5];
 // function greaterLengthElemArray(anyArray ,value){
 //   for (let i = 0 ; i < anyArray.length; i++){
-//     if(value === anyArray[i]) return anyArray[i]
+//     if(value === anyArray[i]) return anyArray.indexOf(anyArray[i])
     
 //   }
 //   return 'Not exist';
 // }
-// console.log(greaterLengthElemArray(arr, 100));
+// console.log(greaterLengthElemArray(arr, 3))
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -168,9 +164,9 @@
 //   this.age = age;
 // }
 
-// let userJohn = new UserInfo('John' , 'Smith' , 19);
-// let userBoris = new UserInfo('Boris' , 'Bybkin' , 27);
-// let userDavid = new UserInfo('David' , 'Colins' , 43);
+// const userJohn = new UserInfo('John' , 'Smith' , 19);
+// const userBoris = new UserInfo('Boris' , 'Bybkin' , 27);
+// const userDavid = new UserInfo('David' , 'Colins' , 43);
 // console.log(userJohn);
 // console.log(userBoris);
 // console.log(userDavid);
@@ -231,8 +227,8 @@
 // }
 
 // function numOfProp(obj , obj2){
-//   let value1 = Object.keys(obj);
-//   let value2 = Object.keys(obj2);
+//   const value1 = Object.keys(obj);
+//   const value2 = Object.keys(obj2);
 //   (value1.length== value2.length)? console.log('Equal'):console.log ('Not equal');
   
 
@@ -244,30 +240,36 @@
 
 // 4. Create a function that converts an array to an object.
 
-// const names = [ 'petya', 'vasya', 'kolya', 'uri']
-// function convert(anyArray){
-//      return {...names}
 
-// }
+// вот я и попался , а как раз в первой пачке комментов обсуждалось)
+
+
+// const names = [ 'petya', 'vasya', 'kolya', 'uri',];
+// function convert(anyArray){
+//      return {...anyArray};
+// };
 // console.log(convert(names));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 
 // 5. Write a function that checks if a value is a valid key for an object.
-
-
+// эксперементальное решение , опциональной цепочкой особо не пользовался
+// const c = {}
 // const name ={}
 // const user= {
 //   name: 'victor',
 //   age:30,
 //   car: 'none',
+//   c: 'nadeus eto to chto nado'
 // }
 
 // function checkKey(obj,key){
-// return key in obj;
+// return obj?.[key] ? 'valid': 'invalid'
 // }
-// console.log(checkKey(user, 'name'))
+// console.log(checkKey(user, 'c'))
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -280,7 +282,7 @@
 //   car: 'none',
 // }
 // function numOfProp(obj){
-//   return Object.values(obj).length;
+//   return Object.values(obj).length
 // }
 // console.log(numOfProp(user))
 
@@ -347,25 +349,20 @@
 
 
 // 10. Create a function that adds a given property to an object.
-//я прям чето запотел на этом вопросе , короче как создать новый обьект со свойствами и значениями исхожного + то что мы передадим я понял , тоесть через оператор расширения ,  но вот как с помощью него напихать в существующий обьект я пока что то не понимаю я пока что понимаю только форму obj[key]= value, вид хоть приблизительно такой ? или вообще иначе ?
 
 // const user= {
 //   name: 'victor',
 //   age:30,
 //   car: false,
-  
 // }
 
 // function pushPropObj(obj , prop, value){
-//     obj = {
-//         ...obj,
-//         [prop]: value,
-//     }
-//     return obj
- 
+//     return {...obj, [prop]: value,};
 // }
 
+// console.log(pushPropObj(user,'Status','isAdmin'))
 
-// console.log(pushPropObj(user,Status','isAdmin'))
-// console.log(user)
 ///////////////////////////////////////////////////////////////////////////////////
+
+
+
