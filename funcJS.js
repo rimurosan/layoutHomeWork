@@ -1,11 +1,14 @@
 //  1. Create a function that iterates through an array and return the sum of all elements.
-// const digitArray = [1,2,3,4,5];
-// function sumElements(anyArr){
-  
-//   anyArr.forEach((item,i)=> console.log(item[i+1]!==null?item+item[i+1]:0)) 
-// }
-// sumElements(digitArray);
+//я хз, вот в одну строку могу так , но без обьявления переменной с последующим возвратом как итог я непонимаю *_*  как посчитать и вывести результат
+//прочел комент , не создавай переменную с присвоеным 0 и последующим возвращением
+// тоесть мой ответ должен выглядеть arr.forEach(и тут чтото просто волшебное что даст мне сумму масива) ----это такой вопрос к тебе
 
+//как заставить этот метод дать такой результат как дал reduce я не понимаю да еще и нельзя обьявить переменную в которую я бы сложил элемент массива  , может я както не так понял условия
+
+// let digitArray = [1,2,3,4,5];
+// const sumElements = anyArray => { let sum = 0; anyArray.forEach(num => sum += num); return sum; }
+// console.log(sumElements(digitArray));
+// console.log(digitArray);
 
 
 ///////////////////////////////////////////////////////////////////////////////////
