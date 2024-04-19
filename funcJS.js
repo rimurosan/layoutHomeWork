@@ -5,11 +5,17 @@
 
 //как заставить этот метод дать такой результат как дал reduce я не понимаю да еще и нельзя обьявить переменную в которую я бы сложил элемент массива  , может я както не так понял условия
 
-// let digitArray = [1,2,3,4,5];
+// const digitArray = [1,2,3,4,5];
 // const sumElements = anyArray => { let sum = 0; anyArray.forEach(num => sum += num); return sum; }
 // console.log(sumElements(digitArray));
 // console.log(digitArray);
 
+//это вроде то что надо , но результат в консольке всегда undefined
+// const digitArray = [1,2,3,4,5];
+// function sumElements(anyArray){
+// return anyArray.forEach((sum => item => sum += item)(0))
+// }
+// console.log(sumElements(digitArray));
 
 ///////////////////////////////////////////////////////////////////////////////////
 
