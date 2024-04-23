@@ -155,7 +155,7 @@
 // const arr= [1,2,3,4,5,6,7,8,9,10,5];
 // function greaterLengthElemArray(anyArray ,value){
 //   for (let i = 0 ; i < anyArray.length; i++){
-//     if(value === anyArray[i]) return anyArray.indexOf(anyArray[i])
+//     if(value === anyArray[i]) return i;
     
 //   }
 //   return 'Not exist';
@@ -264,19 +264,17 @@
 
 // 5. Write a function that checks if a value is a valid key for an object.
 // эксперементальное решение , опциональной цепочкой особо не пользовался
-// const c = {}
-// const name ={}
-// const user= {
-//   name: 'victor',
-//   age:30,
-//   car: 'none',
-//   c: 'nadeus eto to chto nado'
+// const c={};
+// const b= [];
+// const a= 'dwdwq';
+// const d= 23;
+// const j= Symbol('dwdw')
+// function checkKey(value){
+// if(typeof value === 'string' || typeof value === 'number' || typeof value === 'object' || typeof value === 'symbol') return true;
+// else return false;
 // }
 
-// function checkKey(obj,key){
-// return obj?.[key] ? 'valid': 'invalid'
-// }
-// console.log(checkKey(user, 'c'))
+// console.log(checkKey(j))
 
 
 
